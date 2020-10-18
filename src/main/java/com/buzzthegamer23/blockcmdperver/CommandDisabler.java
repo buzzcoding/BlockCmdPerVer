@@ -8,7 +8,7 @@ public class CommandDisabler implements Listener {
 	@EventHandler
 	public void onTeleport(PlayerCommandPreprocessEvent e) {
 		try {
-			e.getPlayer().sendMessage(e.getMessage());
+			if (!Config.getBoolean("enabled")) return;
 			if (Config.getList(Main.getVersionName(Main.getPlayerProto(e.getPlayer()))).contains(e.getMessage().replaceFirst("/", "").split(" ")[0])) {
 				e.getPlayer().sendMessage("That command is disabled on this version. Please join on another version.");
 				e.setCancelled(true);

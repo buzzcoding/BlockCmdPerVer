@@ -18,7 +18,7 @@ import org.bukkit.util.Vector;
 public class Config {
 	//Bringing over main class stuff
 	private static JavaPlugin plugin = Main.plugin;
-	
+
 	//Config of the config manager
 	public static List<Integer> knownconfigs = Arrays.asList(new Integer[] {1});
 	public static List<String> optionslist = Arrays.asList(new String[] {"version", "enabled", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16"});
@@ -69,9 +69,20 @@ public class Config {
 		String value;
 		reloadConfig();
 		try {
-			value = getConfig().getString(option).toString();
+			value = getConfig().getString(option);
 		} catch (NullPointerException e) {
 			value = "null";
+		} 
+		return value;
+	}
+
+	public static Boolean getBoolean(String option) {
+		Boolean value;
+		reloadConfig();
+		try {
+			value = getConfig().getBoolean(option);
+		} catch (NullPointerException e) {
+			value = false;
 		} 
 		return value;
 	}
