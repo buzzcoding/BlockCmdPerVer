@@ -1,7 +1,0 @@
-name: BlockCmdPerVer
-author: BuzzTheGamer23
-version: 1.0.0
-main: com.buzzthegamer23.blockcmdperver.Main
-description: Allows you 
-api-version: 1.13
-softdepends: [ViaVersion, ProtocolSupport]
