@@ -41,7 +41,8 @@ public class Main extends JavaPlugin {
         addProtocols("1.13", new Integer[] {393, 401, 404});
         addProtocols("1.14", new Integer[] {477, 480, 485, 490, 498});
         addProtocols("1.15", new Integer[] {573, 575, 578});
-        addProtocols("1.16", new Integer[] {735, 736, 751, 753, 1073741825, 1073741826, 1073741827, 754}); //That is a looong protocol number
+        addProtocols("1.16", new Integer[] {735, 736, 751, 753, 754});
+	addProtocols("1.17", new Integer[] {755});
 		Bukkit.getPluginManager().registerEvents(new CommandDisabler(), plugin);
 	}
 
