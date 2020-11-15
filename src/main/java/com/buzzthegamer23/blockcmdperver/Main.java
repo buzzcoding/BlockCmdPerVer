@@ -42,7 +42,7 @@ public class Main extends JavaPlugin {
         addProtocols("1.14", new Integer[] {477, 480, 485, 490, 498});
         addProtocols("1.15", new Integer[] {573, 575, 578});
         addProtocols("1.16", new Integer[] {735, 736, 751, 753, 754});
-	addProtocols("1.17", new Integer[] {755});
+	addProtocols("1.17", new Integer[] {755}); //ViaVerson will use 755 for all 1.17 snapshots I think
 		Bukkit.getPluginManager().registerEvents(new CommandDisabler(), plugin);
 	}
 
