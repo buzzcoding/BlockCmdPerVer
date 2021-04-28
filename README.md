@@ -1,6 +1,12 @@
 # BlockCmdPerVer
 A Spigot plugin that lets you block commands per version. Made as a custom plugin for someone.
 
+# Credit/Sources
+* CraftBukkit: https://hub.spigotmc.org/stash/projects/spigot/repos/craftbukkit/browse
+* Spigot: https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse
+* ViaVersion: https://github.com/ViaVersion/ViaVersion
+* ProtocolSupport: https://github.com/ProtocolSupport/ProtocolSupport
+
 # Plugin Requirements
 You must have either ViaVersion or ProtocolSupport for this plugin to work (Having both also works).
 
