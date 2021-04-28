@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import protocolsupport.api.ProtocolSupportAPI;
-import us.myles.ViaVersion.api.Via;
 
 public class Main extends JavaPlugin {
 	public static final String pluginname = "BlockCmdPerVer";
@@ -21,7 +20,13 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		plugin = this;
 		if (Bukkit.getPluginManager().isPluginEnabled("ViaVersion")) {
-			protplugin = "ViaVersion";
+			try {
+				Class.forName("com.viaversion.viaversion.api.ViaManager");
+				protplugin = "ViaVersion";
+			} catch (Exception e) {
+				warn("You are using a version of ViaVersion below 4.0.0");
+				protplugin = "ViaVersion-Legacy";
+			}
 		} else if (Bukkit.getPluginManager().isPluginEnabled("ProtocolSupport")) {
 			protplugin = "ProtocolSupport";
 		} else {
@@ -57,7 +62,9 @@ public class Main extends JavaPlugin {
 
 	public static Integer getPlayerProto(Player player) {
 		if (protplugin.equals("ViaVersion")) {
-			return Via.getAPI().getPlayerVersion(player.getUniqueId());
+			return com.viaversion.viaversion.api.Via.getAPI().getPlayerVersion(player.getUniqueId());
+		} else if (protplugin.equals("ViaVersion-Legacy")) {
+			return us.myles.ViaVersion.api.Via.getAPI().getPlayerVersion(player.getUniqueId());
 		} else if (protplugin.equals("ProtocolSupport")) {
 			return ProtocolSupportAPI.getProtocolVersion(player).getId();
 		} else {
