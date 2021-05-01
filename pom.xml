@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.buzzthegamer23</groupId>
   <artifactId>blockcmdperver</artifactId>
-  <version>1.0.2</version>
+  <version>1.1.0</version>
   <build>
     <plugins>
       <plugin>
@@ -22,8 +22,12 @@
         <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
 	<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+	<repository>
+		<id>viaversion-repo</id>
+		<url>https://repo.viaversion.com</url>
 	</repository>
   </repositories>
   <dependencies>
@@ -34,9 +38,15 @@
       <scope>provided</scope>
     </dependency>
 	<dependency>
+		<groupId>com.viaversion</groupId>
+		<artifactId>viaversion-api</artifactId>
+		<version>4.0.0-21w16a</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
 		<groupId>com.github.ViaVersion</groupId>
 		<artifactId>ViaVersion</artifactId>
-		<version>master-SNAPSHOT</version>
+		<version>3.2.1</version>
 	</dependency>
 	<dependency>
 		<groupId>com.github.ProtocolSupport</groupId>

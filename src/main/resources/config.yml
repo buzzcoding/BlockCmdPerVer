@@ -4,7 +4,7 @@
 version: 1
 
 #Set this to false to disable the plugin
-enabled: true 
+enabled: true
 
 #Blocked commands per version. Put the commands you want to block per version in the version's brackets.
 #Example: If you want to block the /summon and /give commands on 1.7, make the 1.7 line be this:
