@@ -15,8 +15,7 @@ public class CommandDisabler implements Listener {
 				e.setCancelled(true);
 			}
 		} catch (Exception e2) {
-			BlockCmdPerVer.warn("Failed to detect player-sent command. The full error is below.");
-			e2.printStackTrace();
+			BlockCmdPerVer.error(e2, "Failed to detect player-sent command.");
 		}
 	}
 }
