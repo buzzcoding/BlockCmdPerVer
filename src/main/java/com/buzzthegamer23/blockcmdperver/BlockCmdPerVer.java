@@ -42,20 +42,20 @@ public class BlockCmdPerVer extends JavaPlugin {
 			onDisable();
 		}
 		Config.saveDefaultConfig();
-        addProtocols("1.4", 47, 49, 51);
-        addProtocols("1.5", 60, 61);
-        addProtocols("1.6", 73, 74, 78);
-        addProtocols("1.7", 3, 4, 5);
-        addProtocols("1.8", 47); //Wow, Mojang put all of 1.8 on one protocol number...
-        addProtocols("1.9", 107, 108, 109, 110);
-        addProtocols("1.10", 210);
-        addProtocols("1.11", 315, 316);
-        addProtocols("1.12", 335, 338, 340);
-        addProtocols("1.13", 393, 401, 404);
-        addProtocols("1.14", 477, 480, 485, 490, 498);
-        addProtocols("1.15", 573, 575, 578);
-        addProtocols("1.16", 735, 736, 751, 753, 754);
-        addProtocols("1.17", 755);
+		addProtocols("1.4", 47, 49, 51);
+		addProtocols("1.5", 60, 61);
+		addProtocols("1.6", 73, 74, 78);
+		addProtocols("1.7", 3, 4, 5);
+		addProtocols("1.8", 47); //Wow, Mojang put all of 1.8 on one protocol number...
+		addProtocols("1.9", 107, 108, 109, 110);
+		addProtocols("1.10", 210);
+		addProtocols("1.11", 315, 316);
+		addProtocols("1.12", 335, 338, 340);
+		addProtocols("1.13", 393, 401, 404);
+		addProtocols("1.14", 477, 480, 485, 490, 498);
+		addProtocols("1.15", 573, 575, 578);
+		addProtocols("1.16", 735, 736, 751, 753, 754);
+		addProtocols("1.17", 755);
 		Bukkit.getPluginManager().registerEvents(new CommandDisabler(), plugin);
 	}
 
