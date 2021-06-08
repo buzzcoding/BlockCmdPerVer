@@ -17,17 +17,15 @@ import org.bukkit.util.Vector;
 @SuppressWarnings("unused")
 public class Config {
 	//Bringing over main class stuff
-	private static JavaPlugin plugin = Main.plugin;
+	private static JavaPlugin plugin = BlockCmdPerVer.plugin;
 
 	//Config of the config manager
-	public static List<Integer> knownconfigs = Arrays.asList(new Integer[] {1});
-	public static List<String> optionslist = Arrays.asList(new String[] {"version", "enabled", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16"});
-	public static Integer latestconfig = 1;
-
-	public static class BrokenConfigNameGenerationFailException extends Exception { private static final long serialVersionUID = 1L; }
+	public static final List<Integer> knownconfigs = Arrays.asList(new Integer[] {1});
+	public static final List<String> optionslist = Arrays.asList(new String[] {"version", "enabled", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13", "1.14", "1.15", "1.16"});
+	public static final Integer latestconfig = 1;
 
 	
-	public static FileConfiguration getConfig() {
+	protected static FileConfiguration getConfig() {
 		return plugin.getConfig();
 	}
 
@@ -35,12 +33,12 @@ public class Config {
 		plugin.reloadConfig();
 	}
 
-	public static void saveDefaultConfig() {
+	protected static void saveDefaultConfig() {
 		plugin.saveDefaultConfig();
 	}
 
-	private static void handleInvalidConfig() {
-		Main.warn(Main.prefix + "Invalid config: " + getConfigFile());
+	protected static void handleInvalidConfig() {
+		BlockCmdPerVer.warn("Invalid config: " + getConfigFile());
 		String uuid = UUID.randomUUID().toString();
 		Integer iend = uuid.indexOf("-");
 		String id = null;
@@ -50,18 +48,18 @@ public class Config {
 		if (id != null) {
 			String name = getConfigFile().getName() + id;
 		} else {
-			Main.error(Main.prefix + "Failed to generate random broken config name for config file: " + getConfigFile(), new BrokenConfigNameGenerationFailException());
-			Main.disable();
+			BlockCmdPerVer.error("Failed to generate random broken config name for config file: " + getConfigFile());
+			BlockCmdPerVer.disable();
 		}
-		Main.log(Main.prefix + "WARNING: Invalid config. Renaming it to " + getConfigFile());
+		BlockCmdPerVer.log("WARNING: Invalid config. Renaming it to " + getConfigFile());
 	}
 
-	public static File getConfigFile() {
+	protected static File getConfigFile() {
 		File configFile = new File(getConfigFolder(), "config.yml");
 		return configFile;
 	}
 
-	public static File getConfigFolder() {
+	protected static File getConfigFolder() {
 		return plugin.getDataFolder();
 	}
 
@@ -98,13 +96,13 @@ public class Config {
 		return value;
 	}
 
-	public static void setOption(String option, String value) {
+	protected static void setOption(String option, String value) {
 		reloadConfig();
 		getConfig().set(option, value);
 		reloadConfig();
 	}
 
-	public static void checkConfig() {
+	protected static void checkConfig() {
 		String confvers = getString("version");
 		Integer confver = Integer.valueOf(Integer.parseInt(confvers));
 		if (knownconfigs.contains(confver)) {
@@ -135,7 +133,7 @@ public class Config {
 			if (missingvalues.booleanValue() == true) {
 				handleInvalidConfig();
 			} else {
-				Main.log(Main.prefix + "WARNING: The plugin has detected a newer config than plugin understands. This may cause issues.");
+				BlockCmdPerVer.log("WARNING: The plugin has detected a newer config than plugin understands. This may cause issues.");
 			} 
 		} else {
 			Boolean missingvalues = Boolean.valueOf(false);
