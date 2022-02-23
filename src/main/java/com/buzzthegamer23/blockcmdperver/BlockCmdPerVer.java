@@ -56,7 +56,7 @@ public class BlockCmdPerVer extends JavaPlugin {
 		addProtocols("1.15", 573, 575, 578);
 		addProtocols("1.16", 735, 736, 751, 753, 754);
 		addProtocols("1.17", 755, 756);
-		addProtocols("1.18", 757);
+		addProtocols("1.18", 757, 758);
 		Bukkit.getPluginManager().registerEvents(new CommandDisabler(), plugin);
 	}
 
