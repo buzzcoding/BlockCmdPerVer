@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import us.myles.ViaVersion.api.Via;
+import com.viaversion.viaversion.api.Via;
 import protocolsupport.api.ProtocolSupportAPI;
 
 public class BlockCmdPerVer extends JavaPlugin {
