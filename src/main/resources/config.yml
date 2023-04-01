@@ -1,27 +1,23 @@
-#BlockCmdPerVer configuration
+# BlockCmdPerVer configuration
 
-#Version of the config, used to update old configs. Please do not change this option.
-version: 1
+# Version of the config to allow for config migration. Do not change this
+# If you accidentally delete/change it, you can regenerate it by removing the option and restarting the server
+version: 2
 
-#Set this to false to disable the plugin
+# Whether the plugin is enabled. Set this to false to disable the plugin
+# Default: true
 enabled: true
 
-#Blocked commands per version. Put the commands you want to block per version in the version's brackets.
-#Example: If you want to block the /summon and /give commands on 1.7, make the 1.7 line be this:
-#1.7: ["summon", "give]
-#Do not forget the quotes.
-#The versions include all subversions (Ex: the 1.12 option also includes 1.12.1 and 1.12.2)
-1.4: []
-1.5: []
-1.6: []
-1.7: []
-1.8: []
-1.9: []
-1.10: []
-1.11: []
-1.12: []
-1.13: []
-1.14: []
-1.15: []
-1.16: []
-1.17: []
+# Whether to allow bypassing the check with the permission bcpver.bypass
+# Default: false
+bypass-permission: false
+
+# Blocked commands per version. Put the commands you want to block per version in the version's brackets.
+# Example: If you want to block the /summon and /give commands on 1.7, change the 1.7 line to this (quotes not required):
+# 1.7: ["summon", "give"]
+# This can also be done by putting new lines after the version name with a dash and then the command. Ex:
+# 1.7:
+# - summon
+# - give
+# The versions include all minor versions (Ex: the 1.12 option also includes 1.12.1 and 1.12.2)
+versions: {}

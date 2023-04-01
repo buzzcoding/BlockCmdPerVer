@@ -1,3 +1,5 @@
+# Stolen and modified from https://github.com/ViaVersion/ViaVersion/blob/master/.gitignore
+
 ### Java files ###
 *.class
 
@@ -17,9 +19,10 @@ hs_err_pid*
 *.iml
 
 # Ignore IDEA directory
-.idea/*
-!.idea/copyright/*
-!.idea/scopes/*
+.idea/
+#.idea/*
+#!.idea/copyright/*
+#!.idea/scopes/*
 
 # Include the project's dictionary
 !.idea/dictionaries/
