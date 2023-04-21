@@ -1,8 +1,9 @@
 name: BlockCmdPerVer
 author: buzzcoding
-version: 2.0.0
+version: 2.0.1
 main: io.github.buzzcoding.blockcmdperver.BlockCmdPerVer
 description: Allows you to block specific commands per Minecraft version
+folia-supported: true
 api-version: 1.13
 softdepend: [ViaVersion, ProtocolSupport]
 permissions:
